@@ -114,17 +114,17 @@ After this you are done. Shut down the machine and package it up.
 
 ## Packaging up
 ```
-vagrant package --base vdebian-wheezy --output vdebian-wheezy.vanilla.14.12.14.box
+vagrant package --base debian-wheezy --output debian-wheezy.vanilla.14.12.14.box
 ```
 now you can add it to vagrant
 ```
-vagrant box add --name vdebian-wheezy.vanilla.14.12.14 vdebian-wheezy.vanilla.14.12.14.box
+vagrant box add --name debian-wheezy.vanilla.14.12.14 debian-wheezy.vanilla.14.12.14.box
 ```
 Confirm that it has been added and test it out
 
 ```
 mdkdir test
-vagrant init vdebian-wheezy.vanilla.14.12.14
+vagrant init debian-wheezy.vanilla.14.12.14
 vagrant up
 ```
 
