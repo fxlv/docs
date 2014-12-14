@@ -79,9 +79,16 @@ sudo dpkg-reconfigure locales
 ```
 
 ## Cleanup
-Clean apt cache
+Now that the vbox kernel module is built we no longer need the development packages.
+
 ```
-apt-get autoremove
+apt-get remove --purge linux-headers-amd64 build-essential
+apt-get autoremove --purge
+```
+
+Clean apt cache
+
+```
 apt-get clean
 ```
 
