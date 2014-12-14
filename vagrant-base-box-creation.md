@@ -17,6 +17,9 @@ These are the steps to make a Debian vagrant box:
 Install basic debian image, during install specify root pass: vagrant and add user vagrant with password vagrant.
 Call that VM: `debian-wheezy` (or whatever, but I will use this name).
 Also use the same name for machine hostname, for domain you can set vagrantup.com. Does not really matter.
+
+Remove any unnecessary hardware from the VM settings, like audio and USB.
+
 ## Installing additional packages and enabling SSH
 After the installation is complete:
 ```
@@ -99,11 +102,13 @@ stop syslog and remove old logs
 find /var/log -type f -delete
 ```
 ## Zero out the disk
-Now either change runlevel by executing init 1 or reboot into single mode and once there, zero out the free space on the disk. This will allow for much better compression once the box is packaged up.
+Now we can clean up history and close SSH connection.
+
+Either change runlevel by executing `init 1` or reboot into single mode and once there, zero out the free space on the disk. This will allow for much better compression once the box is packaged up.
 
 ```
 mount -o remount,ro /dev/sda1
-zerofree /dev/sda1 
+zerofree -v /dev/sda1 
 ```
 After this you are done. Shut down the machine and package it up.
 
