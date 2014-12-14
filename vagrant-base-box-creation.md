@@ -22,7 +22,7 @@ After the installation is complete:
 ```
 apt-get update 
 apt-get upgrade 
-apt-get install -y build-essential sudo ssh zerofree 
+apt-get install -y ssh 
 ```
 
 Now it makes sense to continue working over SSH session instead of being logged in via VirtualBox
@@ -42,7 +42,7 @@ ssh vagrant@localhost -p 2222
 Now we can install additional packages and do some pre-configuration
 
 ```
-apt-get install -y build-essential sudo ssh zerofree 
+apt-get install -y build-essential sudo zerofree 
 ```
 
 insert virtualbox guest additions iso and run the install script from there
