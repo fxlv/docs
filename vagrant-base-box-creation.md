@@ -15,7 +15,8 @@ These are the steps to make a Debian vagrant box:
 
 ## Installing Debian
 Install basic debian image, during install specify root pass: vagrant and add user vagrant with password vagrant.
-Call that VM: `debian-wheezy-template` (or whatever, but I will use this name)
+Call that VM: `debian-wheezy` (or whatever, but I will use this name).
+Also use the same name for machine hostname, for domain you can set vagrantup.com. Does not really matter.
 ## Installing additional packages and enabling SSH
 After the installation is complete:
 ```
@@ -28,7 +29,7 @@ Now it makes sense to continue working over SSH session instead of being logged 
 
 Enable ssh port forwarding:
 ```
-VBoxManage modifyvm "debian-wheezy-template" --natpf1 "ssh,tcp,,2222,,22"
+VBoxManage modifyvm "debian-wheezy" --natpf1 "ssh,tcp,,2222,,22"
 ```
 
 ## Continuing over SSH
@@ -89,17 +90,17 @@ After this you are done. Shut down the machine and package it up.
 
 ## Packaging up
 ```
-vagrant package --base vdebian-wheezy-template --output vdebian-wheezy-template.vanilla.14.12.14.box
+vagrant package --base vdebian-wheezy --output vdebian-wheezy.vanilla.14.12.14.box
 ```
 now you can add it to vagrant
 ```
-vagrant box add --name vdebian-wheezy-template.vanilla.14.12.14 vdebian-wheezy-template.vanilla.14.12.14.box
+vagrant box add --name vdebian-wheezy.vanilla.14.12.14 vdebian-wheezy.vanilla.14.12.14.box
 ```
 Confirm that it has been added and test it out
 
 ```
 mdkdir test
-vagrant init vdebian-wheezy-template.vanilla.14.12.14
+vagrant init vdebian-wheezy.vanilla.14.12.14
 vagrant up
 ```
 
