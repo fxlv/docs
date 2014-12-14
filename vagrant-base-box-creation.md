@@ -55,7 +55,9 @@ bash /media/cdrom/VBoxLinuxAdditions.run
 modify sudoers file to contain:
 
 ```
+cat << EOF >> /etc/sudoers
 vagrant ALL=(ALL) NOPASSWD: ALL
+EOF
 ```
 and download vagrant public ssh key
 
