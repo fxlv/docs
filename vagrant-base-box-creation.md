@@ -15,7 +15,7 @@ These are the steps to make a Debian vagrant box:
 
 ## Installing Debian
 Install basic debian image, during install specify root pass: vagrant and add user vagrant with password vagrant.
-Call that VM: debian-wheezy-template (or whatever, but I will use this name)
+Call that VM: `debian-wheezy-template` (or whatever, but I will use this name)
 ## Installing additional packages and enabling SSH
 After the installation is complete:
 ```
