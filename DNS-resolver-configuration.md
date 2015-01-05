@@ -113,4 +113,8 @@ and the actual connections to DNS servers start 1.29 milliseconds later
 223536 19:09:12.084389716 0 ping (5081) > procexit status=512
 ```
 
+## Conclusion
+So what we can learn from this is that by default each nameserver is tried 4 times in total (2 connection attempts are made and 2 packets are sent each time per connection) and that the timeouts seemingly are 5,3 and 6 seconds. 
+So over all if, for example, your network is down and you have specified 3 nameservers, it will take almost a minute for your machine to give up on resolving DNS.
+
 
