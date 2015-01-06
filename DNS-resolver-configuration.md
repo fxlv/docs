@@ -1,22 +1,29 @@
 # DNS resolver on Linux
-Every sysadmin has configured /etc/resolv.conf. 
-But does everyone really know how does the resolver works?
+Every sysadmin has configured the resolver in /etc/resolv.conf. 
+But how does the resolver actually works?
 
 ## Resolver configuration
 Even though seemingly there is not much to configure. 
-You can remember few facts (according to /usr/include/resolv.h):
-In linux there can be max 3 nameservers specified
-and max 2 retries are done before switching to the next nameserver
 
-domain is an obsolete
-maximum of 6 domains can be specified in the search directive (with limit of 256 characters in total)
-each nameserver is tried in the order they are specified and the next one is only used if the firts one fails to respond
-the default timeout is 5 seconds
-search line is the only line where the parser can expect several arguments, on the other lines it is safe to write comments as the parser will simply ignore them
+Typical resolver configuration can look like this
+```
+search some-domain.com
+nameserver 8.8.8.8
+nameserver 8.8.4.4
+```
 
-if the resolv.conf file is absent (or if it is missing or contains invalid nameserer specifications), resolver will use 127.0.0.1 as the DNS servers server.
+But there are actually some additional things that you can set in the config file besides the nameservers and search domain.
 
-the options clause can specify timeout and the behaviour of choosing the listed nameservers
+First, some defaults (all of this is true for debian linux and probably others as well):
+
+* there can be max 3 nameservers specified (controller by MAXNS in /usr/include/resolv.h)
+* max 2 retries are done before switching to the next nameserver
+* timeout for a query is 5 seconds
+* maximum of 6 domains can be specified in the search directive (with limit of 256 characters in total)
+* each nameserver is tried in the order they are specified and the next one is only used if the firts one fails to respond
+* search line is the only line where the parser can expect several arguments, on the other lines it is safe to write comments as the parser will simply ignore them
+* if the resolv.conf file is absent (or if it is missing or contains invalid nameserer specifications), resolver will use 127.0.0.1 as the DNS servers server.
+* the options clause can specify timeout and the behaviour of choosing the listed nameservers
 
 ```options rotate timeout:2 attempts:2```
 
@@ -113,8 +120,32 @@ and the actual connections to DNS servers start 1.29 milliseconds later
 223536 19:09:12.084389716 0 ping (5081) > procexit status=512
 ```
 
+## The weirdly variating timeouts and logic
+
+So what we can learn from this is that by default each nameserver is tried 4 times in total (2 connection attempts are made and 2 packets are sent each time per connection) and that the default timeouts are 5,3 and 6 seconds ( if 3 nameservers are specified).
+This seems a bit peculiar as the book "DNS and BIND" describes the timeouts somewhat differently.
+
+If we repeat the tests and override the default timeouts we can see that first timeouts is whatever is set (5 s by default), for next server it is default-30% and the last is default +30%. 
+If only two nameservers are specified then the timeout does not get changed and is whatever is specified (5 s by defaut) every time.
+I would have expected some more randomness there instead of such behaviour ...
+
+## Digging into the source
+res_send.c has the following code:
+```
+        /*
+         * Compute time for the total operation.
+         */
+        int seconds = (statp->retrans << ns);
+        if (ns > 0)
+                seconds /= statp->nscount;
+        if (seconds <= 0)
+                seconds = 1;
+```
+Which basically means that if there is only 1 nameserver the timeout is not touched.
+If there are two nameservers the timeout is adjusted by the bitwise shift and then actually gets canceled by the next division.
+But if you jave 3 nameservers then it gets more interesting.
+
 ## Conclusion
-So what we can learn from this is that by default each nameserver is tried 4 times in total (2 connection attempts are made and 2 packets are sent each time per connection) and that the timeouts seemingly are 5,3 and 6 seconds. 
-So over all if, for example, your network is down and you have specified 3 nameservers, it will take almost a minute for your machine to give up on resolving DNS.
+So overall if, for example, your network is down and you have specified 3 nameservers, it will take almost a minute for your machine to give up on resolving DNS (unless you modify the default timeout).
 
 
