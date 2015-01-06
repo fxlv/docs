@@ -130,7 +130,8 @@ If only two nameservers are specified then the timeout does not get changed and 
 I would have expected some more randomness there instead of such behaviour ...
 
 ## Digging into the source
-res_send.c has the following code:
+After downloading http://ftp.de.debian.org/debian/pool/main/e/eglibc/eglibc_2.13.orig.tar.gz and grepping it for resolver and its timeout logic I found
+res_send.c which has the following code:
 ```
         /*
          * Compute time for the total operation.
@@ -143,7 +144,17 @@ res_send.c has the following code:
 ```
 Which basically means that if there is only 1 nameserver the timeout is not touched.
 If there are two nameservers the timeout is adjusted by the bitwise shift and then actually gets canceled by the next division.
-But if you jave 3 nameservers then it gets more interesting.
+But if you have 3 nameservers then it gets more interesting.
+
+For the first nameserver nothing is done.
+For the second and third the timeout gets bitwise shifted by the nameserver number (second server, so 1) and then gets divided by the count of nameservers.
+
+So if we define timeout as 10, we will get
+for 1 nameserver: 10
+for 2 nameserver: (10 << 1) / 3 = 6
+for 3 nameserver: (10 << 2) / 3 = 13
+
+This logic seems a bit 'interesting'...
 
 ## Conclusion
 So overall if, for example, your network is down and you have specified 3 nameservers, it will take almost a minute for your machine to give up on resolving DNS (unless you modify the default timeout).
