@@ -195,9 +195,10 @@ Why this weird choice of logic I have no idea...
 
 But what about other operating systems? Surely someone has to obey the rules.
 
-So I did similar tracing on OpenBSD and it behaved exactly as it should.
+And indeed they do, I did similar tracing on OpenBSD and it behaved exactly as the nice [book][1] describes.
 First timeout is 5 seconds and every next one is double the timeout divided by nameserver count.
 See https://gist.github.com/fxlv/33c8cad7c0c51e264e26 for a full trace.
+
 
 ## Conclusion
 I am not sure what to say, I was quite surprised.
@@ -206,3 +207,4 @@ Glibc is used by so many distros but do we know what other deviations from stand
 
 
 
+[1]: http://amzn.com/0596100574
