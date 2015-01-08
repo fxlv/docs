@@ -20,12 +20,17 @@ First, some defaults (all of this is true for debian linux and probably others a
 * max 2 retries are done before switching to the next nameserver
 * timeout for a query is 5 seconds
 * maximum of 6 domains can be specified in the search directive (with limit of 256 characters in total)
-* each nameserver is tried in the order they are specified and the next one is only used if the firts one fails to respond
+* each nameserver is tried in the order they are specified and the next one is only used if the first one fails to respond
+* you can specify rotate option to override the default behavior of only using the first nameserver 
 * search line is the only line where the parser can expect several arguments, on the other lines it is safe to write comments as the parser will simply ignore them
 * if the resolv.conf file is absent (or if it is missing or contains invalid nameserer specifications), resolver will use 127.0.0.1 as the DNS servers server.
 * the options clause can specify timeout and the behaviour of choosing the listed nameservers
 
+So a useful addition to resolv.conf might be:
+
 ```options rotate timeout:2 attempts:1```
+
+If the network is down then do we relly need to wait for longer than 5 secs for DNS response? I know I don't want to.
 
 ## Case study
 There are quite interesting man pages and header files that provide more insight into the inner working of the resolver. For example:
