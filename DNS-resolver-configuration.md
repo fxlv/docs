@@ -1,4 +1,4 @@
-# DNS resolver on Linux
+# DNS resolver on Linux (or rather the glibc version used by gnu/linux)
 Every sysadmin has configured the resolver in /etc/resolv.conf. 
 But how does the resolver actually works?
 
@@ -134,7 +134,7 @@ Makes no sense to me so source digging it is.
 
 ## Digging into the source
 After downloading http://ftp.de.debian.org/debian/pool/main/e/eglibc/eglibc_2.13.orig.tar.gz and grepping it for resolver and its timeout logic I found res_send.c which has a function send_dg() that contains following code:
-```
+```c
         /*
          * Compute time for the total operation.
          */
@@ -144,25 +144,65 @@ After downloading http://ftp.de.debian.org/debian/pool/main/e/eglibc/eglibc_2.13
         if (seconds <= 0)
                 seconds = 1;
 ```
+A bit sad that the there are no comments that would explain the decision behind implementing such logic.
+In case you don't understand what happens there see https://gist.github.com/fxlv/6657ba422a9e7afd18ac where I have added comments.
 
 So if there is only 1 nameserver the timeout is not touched and it is whatever you have set or haven't set.
 
 Next, if there are two nameservers then the timeout is adjusted by doing a bitwise shift to the left and then actually gets canceled by the next division.
-So essentially for 2 nameservers the end result is the same as for one nameserver, nothing changes.
+So essentially for 2 nameservers the end result is the same as for one nameserver, nothing changes. And this is a bit weird logic.
 
 But if you have 3 nameservers defined then it gets more interesting.
 
-For the first nameserver nothing is done.
-For the second and third the timeout gets bitwise shifted to the left by the nameserver number (second server, so 1) and then gets divided by the count of nameservers.
+The timeout gets bitwise shifted to the left by the nameserver number (second server, so 1) and then gets divided by the count of nameservers.
 
-So if we define timeout as 10, we will get
-for 1 nameserver: 10
-for 2 nameserver: (10 << 1) / 3 = 6
-for 3 nameserver: (10 << 2) / 3 = 13
+So lets rewrite this into python (https://gist.github.com/fxlv/22490abba76b60684aae):
+```python
+#!/usr/bin/env python
+import sys
+# default dns query timeout is 5 seconds
+retrans = 5
+# give the user a chance to override it by passing an argument
+if (len(sys.argv) == 2):
+        retrans = int(sys.argv[1])
 
-This logic seems a bit 'interesting'...
+# 3 dummy IP addresses
+nameservers = ["1.1.1.1", "2.2.2.2", "3.3.3.3"]
+# nscount is the count of nameservers
+nscount = len(nameservers)
+# lets loop over them all and replicate the logic found in res_send.c
+for nameserver in nameservers:
+    ns = nameservers.index(nameserver)
+
+    seconds = ( retrans << ns )
+    if (ns > 0):
+        seconds = seconds / nscount
+    if (seconds <= 0):
+        seconds = 1
+    # and for visibility we print it out
+    print "Nameserver # {} has timeout {}".format(ns,seconds)
+```
+This script shows what will be the actual timeout based on the initial timeout setting.
+If the initial (as per default) timeout is 5 seconds then the actual timeouts will be these:
+```
+$ ./dnslogic.py 5
+Nameserver # 0 has timeout 5
+Nameserver # 1 has timeout 3
+Nameserver # 2 has timeout 6
+```
+
+Why this weird choice of logic I have no idea...
+
+But what about other operating systems? Surely someone has to obey the rules.
+
+So I did similar tracing on OpenBSD and it behaved exactly as it should.
+First timeout is 5 seconds and every next one is double the timeout divided by nameserver count.
+See https://gist.github.com/fxlv/33c8cad7c0c51e264e26 for a full trace.
 
 ## Conclusion
-So overall if, for example, your network is down and you have specified 3 nameservers, it will take almost a minute for your machine to give up on resolving DNS (unless you modify the default timeout).
+I am not sure what to say, I was quite surprised.
+Glibc is used by so many distros but do we know what other deviations from standards it contains?
+
+
 
 
