@@ -25,7 +25,7 @@ First, some defaults (all of this is true for debian linux and probably others a
 * if the resolv.conf file is absent (or if it is missing or contains invalid nameserer specifications), resolver will use 127.0.0.1 as the DNS servers server.
 * the options clause can specify timeout and the behaviour of choosing the listed nameservers
 
-```options rotate timeout:2 attempts:2```
+```options rotate timeout:2 attempts:1```
 
 ## Case study
 There are quite interesting man pages and header files that provide more insight into the inner working of the resolver. For example:
@@ -38,8 +38,8 @@ Reading all the man pages and checking resolv.h is of course interesting, but me
 
 So just for fun here is what happens if you try to resolve a non-existant hostname and use non-existant DNS servers.
 
-I am using a Debian Wheezy Vagrant box to test this.
-I have 3 non-existant dns servers specified in the resolv.conf like so:
+I am using a Debian Wheezy box to test this.
+I have 3 non-existant DNS servers specified in the resolv.conf like so:
 ```
 domain testnet
 search testnet
@@ -57,7 +57,7 @@ user	0m0.000s
 sys	0m0.008s
 ```
 So it takes 56 seconds for the resolver to give up and for the ping command to fail. Quite a long time indeed.
-I retried the command several times and everyt time it was 56 seconds, so this means that the timeouts are the same every single time, which is a bit disappointing. Just to be safe I retried same command on a baremetal server and again same 56 seconds. 
+I retried the command several times and every time it was 56 seconds, so this means that the timeouts are the same every single time, which is a bit disappointing. Just to be safe I retried same command on a baremetal server and again same 56 seconds. 
 But what are they? The manpage of resolv.conf and the resolv.h only defines RES_TIMEOUT to be 5 but that does not add up. If we have 2 retries per nameserver and the timeout is 5 then it should all be over in 30 seconds.
 
 So trace we shall.
@@ -116,22 +116,24 @@ and the actual connections to DNS servers start 1.29 milliseconds later
 
 56 seconds after it all started the resolver gives up
 ```
-#all the libraries get closed and ping exits with an error 512 at 
+#all the libraries get closed and ping gives up
 223536 19:09:12.084389716 0 ping (5081) > procexit status=512
 ```
 
 ## The weirdly variating timeouts and logic
 
 So what we can learn from this is that by default each nameserver is tried 4 times in total (2 connection attempts are made and 2 packets are sent each time per connection) and that the default timeouts are 5,3 and 6 seconds ( if 3 nameservers are specified).
-This seems a bit peculiar as the book "DNS and BIND" describes the timeouts somewhat differently.
+This seems a bit peculiar. Quick googling also does not provide any satisfactory explanation. The book "DNS and BIND" describes the timeouts somewhat differently. It says that if you have 3 nameservers then the first timeout is 5 seconds but for next retries it doubles the timeout each time divided by the amount of nameservers. 
+So basically it means 5 seconds for first round 10/3 seconds for second, 20/3 seconds for third etc.
+But this is definitely not what we are observing here.
 
-If we repeat the tests and override the default timeouts we can see that first timeouts is whatever is set (5 s by default), for next server it is default-30% and the last is default +30%. 
+If we repeat the tests and override the default timeouts we can see that first timeouts is whatever is set (5 s by default), for next server it is default- ~30% and the last is default +~30%. 
 If only two nameservers are specified then the timeout does not get changed and is whatever is specified (5 s by defaut) every time.
-I would have expected some more randomness there instead of such behaviour ...
+
+Makes no sense to me so source digging it is.
 
 ## Digging into the source
-After downloading http://ftp.de.debian.org/debian/pool/main/e/eglibc/eglibc_2.13.orig.tar.gz and grepping it for resolver and its timeout logic I found
-res_send.c which has the following code:
+After downloading http://ftp.de.debian.org/debian/pool/main/e/eglibc/eglibc_2.13.orig.tar.gz and grepping it for resolver and its timeout logic I found res_send.c which has a function send_dg() that contains following code:
 ```
         /*
          * Compute time for the total operation.
@@ -142,12 +144,16 @@ res_send.c which has the following code:
         if (seconds <= 0)
                 seconds = 1;
 ```
-Which basically means that if there is only 1 nameserver the timeout is not touched.
-If there are two nameservers the timeout is adjusted by the bitwise shift and then actually gets canceled by the next division.
-But if you have 3 nameservers then it gets more interesting.
+
+So if there is only 1 nameserver the timeout is not touched and it is whatever you have set or haven't set.
+
+Next, if there are two nameservers then the timeout is adjusted by doing a bitwise shift to the left and then actually gets canceled by the next division.
+So essentially for 2 nameservers the end result is the same as for one nameserver, nothing changes.
+
+But if you have 3 nameservers defined then it gets more interesting.
 
 For the first nameserver nothing is done.
-For the second and third the timeout gets bitwise shifted by the nameserver number (second server, so 1) and then gets divided by the count of nameservers.
+For the second and third the timeout gets bitwise shifted to the left by the nameserver number (second server, so 1) and then gets divided by the count of nameservers.
 
 So if we define timeout as 10, we will get
 for 1 nameserver: 10
