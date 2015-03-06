@@ -27,3 +27,13 @@ ps axo comm,pid,lwp,nlwp,pcpu,cputime,pmem,rss,vsize,start_time,args  -L --sort 
 ```
 ps axo comm,pid,lwp,nlwp,pcpu,cputime,pmem,rss,vsize,start_time,args  -L --sort -rss --cols 170
 ```
+
+
+## other useful things
+### Longer usernames in the putput
+by default ps only shows usernames if they are <= 8 characters
+you can override that like so
+```
+ps xao user:12,pid,%cpu,%mem,vsz,rss,tty,stat,start,time,comm
+```
+
