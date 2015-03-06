@@ -7,11 +7,13 @@ ps aux --sort=-pcpu
 ```
 ps aux --sort=-rss
 ```
+## customizing the output
 ### select what stats are printed and combine that with sorting criteria
 ```
 ps axo comm,pid,pcpu,cputime,pmem,rss,vsize,start_time,args  --sort -rss
 ```
 
+## threads
 ### show threads
 ```
 ps -eLf
