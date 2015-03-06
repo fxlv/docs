@@ -1,4 +1,4 @@
-# simple sorting
+## simple sorting
 ### find the top memory user
 ```
 ps aux --sort=-pcpu
