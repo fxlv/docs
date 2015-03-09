@@ -6,3 +6,7 @@ Diffing specific path from other branch
 Checking out specific file from a branch
     
     git checkout branch_name -- path/to/file
+
+Merging changes from specific file in another branch
+
+    git checkout --patch branch_name path/to/file
