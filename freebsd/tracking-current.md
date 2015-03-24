@@ -1,11 +1,39 @@
+Check out the sources
+See https://www.freebsd.org/doc/handbook/svn.html for other SVN URLs
+
+```
 svn co https://svn0.eu.freebsd.org/base/head /usr/src
+```
 
-make -j 2 buildworld
-make -j 2 buildkernel
+Before you build you need to have two config files - /etc/src.conf and /etc/make.conf
+There's an example make.conf in /usr/share/examples/etc/make.conf which you can take as the basis.
 
+For src.conf please see the man page for the available options, example src.conf on my microserver looks liek this:
+```
+WITHOUT_ATM=yes
+WITHOUT_WIRELESS=yes
+WITHOUT_BLUETOOTH=yes
+WITHOUT_CALENDAR=yes
+WITHOUT_GAMES=yes
+```
+
+```
+time make -j 2 buildworld
+time make -j 2 buildkernel
+```
+
+```
 make installkernel
-reboot 
-# once rebooted got back to /usr/src
-cd /usr/src
+```
+Reboot, and once back up go to /usr/src and there do
+
+```
 mergemaster -p 
 make installworld
+mergemaster -iUF
+yes | make delete-old
+yes | make delete-old-libs
+cd /usr/obj && chflags -R noschg * && rm -rf *
+```
+
+and do a final reboot
