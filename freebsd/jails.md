@@ -3,3 +3,8 @@ Provided that you have built your own world and that you have not cleaned /usr/o
 ```
 ezjail-admin update -i -p
 ```
+enable jails
+
+```
+echo "ezjail_enable=\"YES\"" >> /etc/rc.conf
+```
