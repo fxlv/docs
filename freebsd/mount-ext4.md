@@ -9,7 +9,7 @@ kldload fuse.ko
 ```
 You can dd it to /boot/lodaer.conf if you want it to be auto loaded.
 ```
-echo "fuse_load=\”YES\” >> /boot/loader.conf"
+echo "fuse_load=\”YES\”" >> /boot/loader.conf
 ```
 
 find out the name of the disk by doing
