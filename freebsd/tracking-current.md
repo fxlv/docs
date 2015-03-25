@@ -17,7 +17,15 @@ WITHOUT_CALENDAR=yes
 WITHOUT_GAMES=yes
 ```
 
+clear previously built files
 ```
+chflags -R noschg /usr/obj/*
+rm -rf /usr/obj
+```
+build stuff
+
+```
+cd /usr/src
 time make -j 2 buildworld
 time make -j 2 buildkernel
 ```
@@ -32,8 +40,11 @@ mergemaster -p
 make installworld
 mergemaster -iUF
 yes | make delete-old
-yes | make delete-old-libs
-cd /usr/obj && chflags -R noschg * && rm -rf *
 ```
 
-and do a final reboot
+now reboot and when the machine comes back up delete the old libraries
+```
+yes | make delete-old-libs
+```
+
+And you are done.
