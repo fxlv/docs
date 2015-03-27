@@ -2,8 +2,7 @@
 Update the ports tree by using portsnap
 
 ```
-portsnap fetch 
-portsnap update
+portsnap fetch update
 ```
 Afterwards portmaster script can be used to build the ports that have newer versions available
 
