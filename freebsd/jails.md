@@ -43,6 +43,16 @@ ezjail-admin create jailname 'bge0|192.168.4.2'
 ```
 Replace ```bge0``` with the name of the network interface you wish to use on the host machine.
 
+Configure SSH to start at jail boot
+
+```
+echo "sshd_enable='YES'" > /data/jails/jailname/etc/rc.conf
+```
+And start the jail
+```
+ezjail-admin start jailname
+```
+
 ### Deleting 
 To stop a jail and delete it run
 
