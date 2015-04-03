@@ -21,8 +21,13 @@ enable jails
 
 ```
 echo "ezjail_enable=\"YES\"" >> /etc/rc.conf
+echo "cloned_interfaces=\"${cloned_interfaces} lo1\""
+service netif cloneup
+service ezjail start
 ```
+
 ## Basejail
+### Creating basejail
 After configuring, first thing to do is to install the basejail.
 Assuming that you have built your own world and that you have not cleaned /usr/obj
 you can use 
@@ -31,6 +36,22 @@ you can use
 ezjail-admin update -i -p
 ```
 This will do a ```make installworld``` and will also copy over the ports tree to the basejail.
+
+### Updating basejail
+If you have updated the host system from source then you can update the basejail by runnig
+```
+ezjail-admin update -i
+```
+Then for each jail update the config files
+```
+mergemaster -U -D /usr/jails/jailname
+```
+
+To update the basejail ports tree do
+```
+ezjail-admin update -P
+```
+
 
 
 ## Managing jails
