@@ -18,9 +18,15 @@ enable jails
 echo "ezjail_enable=\"YES\"" >> /etc/rc.conf
 ```
 
-Provided that you have built your own world and that you have not cleaned /usr/obj
+After configuring, first thing to do is to install the basejail.
+Assuming that you have built your own world and that you have not cleaned /usr/obj
+you can use 
 
 ```
 ezjail-admin update -i -p
 ```
+This will do a ```make installworld``` and will also copy over the ports tree to the basejail.
+
+
+
 
