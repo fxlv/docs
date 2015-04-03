@@ -47,6 +47,6 @@ Replace ```bge0``` with the name of the network interface you wish to use on the
 To stop a jail and delete it run
 
 ```
-ezjail-admin delete -fw
+ezjail-admin delete -fw jailname
 ```
 
