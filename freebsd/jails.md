@@ -37,6 +37,16 @@ ezjail-admin update -i -p
 ```
 This will do a ```make installworld``` and will also copy over the ports tree to the basejail.
 
+This will also create a ```newjail``` which is a flavour that is always applied to a new jail.
+You can customize it with whatever default settings you prefer.
+
+For example set a timezone and dns settings for all new jails
+
+```
+cp /etc/localtime /data/jails/newjail/etc/
+cp /etc/resolv.conf /data/jails/newjail/etc/
+```
+
 ### Updating basejail
 If you have updated the host system from source then you can update the basejail by runnig
 ```
