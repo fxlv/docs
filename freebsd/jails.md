@@ -84,6 +84,13 @@ And start the jail
 ezjail-admin start jailname
 ```
 
+Note that if you plan on running any services that need access to raw sockets (like named, or even plain ping), then you have to enable that for the jail. This can be done in the individual per jail config file in ```/usr/local/etc/ezjail``` directory. Add the following to the jail config:
+
+```
+export jail_JAIL_NAME_HERE_parameters="allow.raw_sockets=1"
+```
+
+
 ### Deleting 
 To stop a jail and delete it run
 
