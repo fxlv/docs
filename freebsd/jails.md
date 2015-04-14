@@ -89,7 +89,16 @@ Note that if you plan on running any services that need access to raw sockets (l
 ```
 export jail_JAIL_NAME_HERE_parameters="allow.raw_sockets=1"
 ```
+### Snapshots
+You can create snapshots for the jails by doing:
 
+```
+ezjail-admin snapshot JAIL_NAME
+```
+Afterwards you can list the existing snapshots for this jail by doing:
+```
+zfs list -H -t snapshot|grep JAIL_NAME
+```
 
 ### Deleting 
 To stop a jail and delete it run
