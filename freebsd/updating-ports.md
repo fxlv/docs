@@ -22,6 +22,12 @@ cd /usr/ports/ports-mgmt/portmaster
 make install clean
 ```
 
+To check if any ports need updating run:
+```
+portmaster -L
+```
+to actually upgarde them, run:
+
 ```
 portmaster -a
 ```
