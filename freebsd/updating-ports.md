@@ -25,3 +25,12 @@ make install clean
 ```
 portmaster -a
 ```
+### Setting build options recursively
+Many ports allow to set various build options. 
+If a port had many dependencies then it can happen so that the build process gets interrupted many times when each of the dependencies present their build options dialog.
+To avoid that you can run 
+```
+make config-recursive
+```
+before building the port.
+
