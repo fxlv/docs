@@ -2,7 +2,7 @@ Install Xorg by doing
 ```
 pkg install xorg
 ```
-Note that HAL and DBUS are no longer needed (at least in FreeBSD 11-CURRENT).
+Note that HAL and DBUS are no longer needed (at least in FreeBSD 11-CURRENT it is replaced by DEVD).
 
 
 Configure the X by doing 
