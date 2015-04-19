@@ -1,3 +1,8 @@
+Install subversion
+```
+pkg install subversion
+```
+
 Check out the sources
 See https://www.freebsd.org/doc/handbook/svn.html for other SVN URLs
 
