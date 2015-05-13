@@ -99,6 +99,10 @@ Afterwards you can list the existing snapshots for this jail by doing:
 ```
 zfs list -H -t snapshot|grep JAIL_NAME
 ```
+or 
+```
+zfs list -t all -r data/jails/<jail_name_here>
+```
 
 ### Deleting 
 To stop a jail and delete it run
