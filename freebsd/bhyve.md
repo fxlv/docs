@@ -50,3 +50,15 @@ bhyve -c 2 -m 2048M -H -P -A \
     -s 3,ahci-cd,/bhyve/isos/ubuntu-14.04.2-server-amd64.iso \
     -s 4,virtio-blk,/dev/zvol/zroot/bhyve/disks/ubuntu1 ubuntu1
 ```
+After it has been installed, launch it:
+
+```
+bhyvectl --vm=ubuntu1 --destroy
+grub-bhyve -r hd0,msdos1 -m /bhyve/disks/ubuntu1.map -M 2048 ubuntu1
+bhyve -c 2 -m 2048M -H -P -A \
+    -l com1,stdio \
+    -s 0:0,hostbridge \
+    -s 1:0,lpc \
+    -s 2:0,virtio-net,tap0 \
+    -s 3,virtio-blk,/dev/zvol/zroot/bhyve/disks/ubuntu1 ubuntu1
+```
