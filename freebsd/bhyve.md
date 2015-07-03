@@ -36,12 +36,12 @@ create map file ```/bhyve/disks/ubuntu1.map``` with the following contents:
 (hd0) /dev/zvol/zroot/bhyve/disks/ubuntu1
 (cd0) /bhyve/isos/ubuntu-14.04.2-server-amd64.iso
 ```
-
+Run the bootloader first
 ```
 grub-bhyve -r cd0 -m /bhyve/disks/ubuntu1.map -M 2048 ubuntu1
 ```
 
-launch the vm
+Then you can launch the vm
 ```
 bhyve -c 2 -m 2048M -H -P -A \
     -l com1,stdio \
