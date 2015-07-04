@@ -1,5 +1,12 @@
 To be able to ZFS receive as a regular user, first we need to create a new dataset and set its ownership as well as delegate some rights for the user.
 
+### On the sending system
+Allow everything (```zroot``` in this case) to be sent by ```fx```user
+```
+zfs allow -u fx send,snapshot zroot
+```
+
+### On the receiving system
 ```
 zfs create data/zfs_backup
 zfs allow -u fx create,mount,receive data/zfs_backup
