@@ -18,3 +18,8 @@ sysctl vfs.usermount=1
 # make it persistent
 echo vfs.usermount=1 >> /etc/sysctl.conf
 ```
+### Sending
+First, create a snapshot and then send it
+```
+zfs send -R zroot/usr/home@test1 | ssh frisbie zfs recv -dvu data/zfs_backup
+```
