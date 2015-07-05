@@ -7,6 +7,7 @@ It can also be used to install BSD from within Linux.
 
 We will use mfsBSD to create a bootable FreeBSD environment that will be loaded into memory (much like a livecd).
 
+
 By default Digitalocean creates droplets that have ```freebsd``` user preinstalled and this user can use ```sudo``` to gain root.
 So I will assume that this is what we use.
 
@@ -42,6 +43,7 @@ set up networking
 ```
 cp conf/rc.conf.sample conf/rc.conf
 cat /etc/rc.digitalocean.d/droplet.conf >> conf/rc.conf
+cp /etc/resolv.conf conf/resolv.conf
 ```
 
 Now we are ready to build the FreeBSD tar
