@@ -10,8 +10,15 @@ We will use mfsBSD to create a bootable FreeBSD environment that will be loaded 
 By default Digitalocean creates droplets that have ```freebsd``` user preinstalled and this user can use ```sudo``` to gain root.
 So I will assume that this is what we use.
 
-Log in to your new droplet as the ```freebsd``` user and download the necessary files.
+Log in to your new droplet as the ```freebsd``` user and launch bourne shell ```sh```, this will be needed for some of the commands we will run.
 
+```
+ssh freebsd@123.123.123.123
+# launch bourne shell once you have logged in
+sh
+```
+
+Then download the necessary files.
 ```
 curl -O http://mfsbsd.vx.sk/release/mfsbsd-2.1.tar.gz
 curl -O ftp://ftp.freebsd.org/pub/FreeBSD/releases/amd64/10.1-RELEASE/base.txz
