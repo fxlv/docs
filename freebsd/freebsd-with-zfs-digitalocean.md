@@ -2,12 +2,12 @@
 ### Introduction
 Digitalocean provides FreeBSD 10 droplets with UFS filesystem but what if you want to use ZFS?
 
-Reinstalling the droplet is easier then it might seem.
+In this howto you will learn how to install FreeBSD with ZFS on a Digitalocean droplet.
 
-mfsBSD comes to the rescue, it allows for creating BSD disk images, ISOs and tarballs.
+We will use mfsBSD to create a in-memory FreeBSD environment from which we will launch  ```bsdinstall``` system installer.
+mfsBSD allows for creating BSD disk images, ISOs and tarballs.
 It can also be used to install BSD from within Linux.
 
-We will use mfsBSD to create a bootable FreeBSD environment that will be loaded into memory (much like a livecd).
 ### Prerequisites
 Digitalocean droplet running FreeBSD 10.1 with at least 2 GB of memory.
 FreeBSD will run fine in the smallest droplet but for the install time you have to resize it to have more memory.
