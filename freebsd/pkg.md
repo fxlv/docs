@@ -9,3 +9,8 @@ Upgrade all installed packages with
 ```
 pkg upgrade
 ```
+
+Some PKG problems can be fixed by running 
+```
+pkg update -f
+```
