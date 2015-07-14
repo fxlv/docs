@@ -26,7 +26,7 @@ zfs send -R zroot/usr/home@test1 | ssh frisbie zfs recv -dvu data/zfs_backup
 ```
 
 ## Tuning and stats
-One useful tool is ``sysutils/zfs-stats```
+One useful tool is ```sysutils/zfs-stats```
 If you run a low-mem system, you might want to lower the maximum amount of memory that ARC can use.
 This can be done by setting 
 ```
