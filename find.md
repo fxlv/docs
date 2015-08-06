@@ -13,7 +13,7 @@ find . -type f -mtime +80 -exec rm -rvf {} \;
 ```
 Finding files that were created or modified on a specific date or time window
 Key here is to use the argument -newerXt where X is one of these: a - access, b - inode creation, c - change, m - modification time.
-For example, find all files that were created on May 21st:
+For example, find all jpg files that were created on May 21st:
 ```
 find . -type f -name "*.jpg" -newermt 2015-05-21 ! -newermt 2015-05-22 -exec ls -lash {} \;
 ```
