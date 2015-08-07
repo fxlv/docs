@@ -14,3 +14,8 @@ you can use OR to combine several search patterns
 ```
 sed -n '/DPT=23 \|DPT=22 /p' iptables-INPUT.log
 ```
+
+When looking at configs it is useful to skip commented out lines and blank lines
+```
+sed '/^#\|^$/d' /etc/sysctl.conf
+```
