@@ -10,3 +10,7 @@ Example, search for string `fx` in the file `auth.log`
 ```
 sed -n '/fx/p' auth.log
 ```
+you can use OR to combine several search patterns
+```
+sed -n '/DPT=23 \|DPT=22 /p' iptables-INPUT.log
+```
