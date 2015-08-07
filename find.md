@@ -29,3 +29,8 @@ Find setuid and setgid files
 
     find / \( -perm 2000 -o -perm 4000 \) -type f -print 
 
+### Finding files based on size
+```
+sudo find /var -type f -size +100M -exec ls -lash {} \;| sort -h
+```
+
