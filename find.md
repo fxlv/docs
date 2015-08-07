@@ -31,6 +31,6 @@ Find setuid and setgid files
 
 ### Finding files based on size
 ```
-sudo find /var -type f -size +100M -exec ls -lash {} \;| sort -h
+find /var -type f -size +100M -exec ls -lash {} \;| sort -h
 ```
 
