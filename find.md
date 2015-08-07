@@ -30,6 +30,7 @@ Find setuid and setgid files
     find / \( -perm 2000 -o -perm 4000 \) -type f -print 
 
 ### Finding files based on size
+Find files larger than 100 megabytes and sort the result in human friendly way
 ```
 find /var -type f -size +100M -exec ls -lash {} \;| sort -h
 ```
