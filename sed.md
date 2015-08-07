@@ -26,3 +26,9 @@ For example:
 sed -n '11,14p' /etc/crontab
 ```
 You can find line numbers by using `nl -b a <filename>`
+
+But wait, it gets better, you can also specify the range by providing start and end pattern, like so:
+```
+sed -n '/Aug  6/,/Aug 7/p' /var/log/messages
+```
+
