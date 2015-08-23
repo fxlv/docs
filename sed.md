@@ -25,7 +25,7 @@ For example:
 ```
 sed -n '11,14p' /etc/crontab
 ```
-You can find line numbers by using `nl -b a <filename>`
+You can find line numbers by using `nl -b a <filename>` or simply `cat -n <filename>`
 
 But wait, it gets better, you can also specify the range by providing start and end pattern, like so:
 ```
