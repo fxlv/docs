@@ -35,3 +35,11 @@ Find files larger than 100 megabytes and sort the result in human friendly way
 find /var -type f -size +100M -exec ls -lash {} \;| sort -h
 ```
 
+### Finding files owned by certain users/groups
+```
+find . -uid 1001 -gid 1003 -ls
+```
+a bit more useful example: find all files that are owned by certain uid and gid that don't yet have permissions 0644 and change the perms to 644, exclude shell scripts.
+```
+find someplace/somewhere ! -name "*.sh" -type f -uid 1001 -gid 1001 ! -perm 0664 -exec chmod -v 664 {} \;
+```
