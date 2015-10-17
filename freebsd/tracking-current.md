@@ -52,4 +52,10 @@ now reboot and when the machine comes back up delete the old libraries
 yes | make delete-old-libs
 ```
 
-And you are done.
+If you use jails on the host then you probably want to also update the jail basehost.
+In case if you use ezjail then this can be done by running:
+
+```
+ezjail-admin update -i
+```
+
