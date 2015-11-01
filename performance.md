@@ -1,14 +1,17 @@
 #Cpu
 
 Gather info: cat /proc/cpuinfo
-```
-cat /proc/loadavg
-vmstat
-mpstat -P ALL
-ps
-top
-htop
-```
+
+System load:
+
+* cat /proc/loadavg
+* vmstat
+* mpstat -P ALL
+* ps
+* top
+* htop
+* vtop
+
 More on [ps](https://github.com/fxlv/docs/blob/master/ps.md) here.
 
 #Memory
