@@ -11,7 +11,7 @@ System load:
 * top
 * htop
 * [vtop](https://parall.ax/vtop)
-* [dstat](http://dag.wiee.rs/home-made/dstat)/
+* [dstat](http://dag.wiee.rs/home-made/dstat/)
 
 More on [ps](https://github.com/fxlv/docs/blob/master/ps.md) here.
 
