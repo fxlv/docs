@@ -10,7 +10,8 @@ System load:
 * ps
 * top
 * htop
-* vtop
+* [vtop](https://parall.ax/vtop)
+* [dstat](http://dag.wiee.rs/home-made/dstat)/
 
 More on [ps](https://github.com/fxlv/docs/blob/master/ps.md) here.
 
