@@ -11,16 +11,24 @@ Open Powershell Admin console:
 Set-ExecutionPolicy Unrestricted
 ```
 
-Then install [chocolatey](https://chocolatey.org/)
+### Chocolatey 
+Install [chocolatey](https://chocolatey.org/) and use it to install everything else.
 
+Then use ```choco install``` or ```cinst``` to install packages.
+(in admin shell):
 
-Then:
 ```
-choco install -y putty.install git.install 7zip.install
-choco install -y Far ccleaner sysinternals
-choco install -y python2 pip github
-choco install -y windirstat youtube-dl winpcap wireshark gimp 
-choco install cmder -pre 
+cinst -y putty.install git.install 7zip.install
+cinst -y Far ccleaner sysinternals vlc
+cinst -y python2 pip github
+cinst -y windirstat youtube-dl winpcap wireshark gimp 
+cinst cmder -pre 
+```
+
+To update all the packages run 
+
+```
+cup all
 ```
 
 ### Python
