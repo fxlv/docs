@@ -1,17 +1,21 @@
 This is how I set up my windows devices.
+Might not be the best way but it's my way.
 
-Install x64 jre
+## Software
+### Manual install
 
-Install [Rapid Environment Editor](http://www.rapidee.com/en/download)
+* Install x64 jre
+* Install [Rapid Environment Editor](http://www.rapidee.com/en/download)
+* Install [visual studio code editor](https://code.visualstudio.com/updates)
 
-Install [visual studio code editor](https://code.visualstudio.com/updates)
+### Chocolatey 
 
 Open Powershell Admin console:
+
 ```
 Set-ExecutionPolicy Unrestricted
 ```
 
-### Chocolatey 
 Install [chocolatey](https://chocolatey.org/) and use it to install everything else.
 
 Then use ```choco install``` or ```cinst``` to install packages.
