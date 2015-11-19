@@ -22,10 +22,8 @@ Then use ```choco install``` or ```cinst``` to install packages.
 (in admin shell):
 
 ```
-cinst -y putty.install git.install 7zip.install
-cinst -y Far ccleaner sysinternals vlc
-cinst -y python2 pip github
-cinst -y windirstat youtube-dl winpcap wireshark gimp 
+cinst -y putty.install git.install 7zip.install Far ccleaner sysinternals vlc
+cinst -y python2 pip github windirstat youtube-dl winpcap wireshark gimp 
 cinst cmder -pre 
 ```
 
