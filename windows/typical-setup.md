@@ -43,4 +43,5 @@ Pip install ipython pyreadline
 ```
 (you need to have pyreadline installed on windows to take advantage of tab-completion)
 
+[Pywin32](http://sourceforge.net/projects/pywin32/files/pywin32/Build%20219/pywin32-219.win-amd64-py2.7.exe/download), since you are on windows you might want to install it.
 
