@@ -39,7 +39,8 @@ Pip and easy_install are already installed as part of standard windows python in
 (in admin shell):
 ```
 pip install --upgrade pip
-Pip install ipython
+Pip install ipython pyreadline
 ```
+(you need to have pyreadline installed on windows to take advantage of tab-completion)
 
 
