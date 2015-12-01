@@ -10,6 +10,7 @@ System load:
 * ps
 * top
 * htop
+* [glances](https://github.com/nicolargo/glances)
 * pidstat
 * [vtop](https://parall.ax/vtop)
 * [dstat](http://dag.wiee.rs/home-made/dstat/)
