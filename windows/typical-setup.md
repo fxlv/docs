@@ -24,7 +24,7 @@ Then use ```choco install``` or ```cinst``` to install packages.
 ```
 cinst -y putty.install git.install 7zip.install Far ccleaner sysinternals vlc firefox
 cinst -y python2 pip github windirstat youtube-dl winpcap wireshark gimp 
-cinst cmder -pre 
+cinst -y -pre cmder
 ```
 
 To update all the packages run 
