@@ -7,7 +7,7 @@ System load:
 * cat /proc/loadavg
 * vmstat
 * mpstat -P ALL
-* ps
+* [ps](https://github.com/fxlv/docs/blob/master/ps.md)
 * top
 * htop
 * [glances](https://github.com/nicolargo/glances)
@@ -15,7 +15,6 @@ System load:
 * [vtop](https://parall.ax/vtop)
 * [dstat](http://dag.wiee.rs/home-made/dstat/)
 
-More on [ps](https://github.com/fxlv/docs/blob/master/ps.md) here.
 
 #Memory
 
@@ -44,4 +43,5 @@ sar -n DEV
 ```
 
 #Gathering system information
+`lshw` or `lshw -short` gives a nice overview on the installed hardware
 `dmidecode`, `dmidecode -t <n>` where n is a number, see man page
