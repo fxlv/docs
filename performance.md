@@ -14,6 +14,7 @@ System load:
 * pidstat
 * [vtop](https://parall.ax/vtop)
 * [dstat](http://dag.wiee.rs/home-made/dstat/)
+* systat (freebsd)
 
 
 #Memory
