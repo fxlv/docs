@@ -9,7 +9,7 @@ mfsBSD allows for creating BSD disk images, ISOs and tarballs.
 It can also be used to install BSD from within Linux.
 
 ### Prerequisites
-Digitalocean droplet running FreeBSD 10.1 with at least 2 GB of memory.
+Digitalocean droplet running FreeBSD 10.2 with at least 2 GB of memory.
 FreeBSD will run fine in the smallest droplet but for the install time you have to resize it to have more memory.
 In my experience you have to have at least 2 GB of RAM (the $20/month droplet) during installation otherwise you might run out of memory.
 Afterwards you can resize it back to the original size.
@@ -30,16 +30,17 @@ sh
 
 Then download the necessary files.
 ```
-curl -O http://mfsbsd.vx.sk/release/mfsbsd-2.1.tar.gz
-curl -O ftp://ftp.freebsd.org/pub/FreeBSD/releases/amd64/10.1-RELEASE/base.txz
-curl -O ftp://ftp.freebsd.org/pub/FreeBSD/releases/amd64/10.1-RELEASE/kernel.txz
+curl -L -O https://github.com/mmatuska/mfsbsd/archive/2.2.tar.gz
+curl -O ftp://ftp.freebsd.org/pub/FreeBSD/releases/amd64/10.2-RELEASE/base.txz
+curl -O ftp://ftp.freebsd.org/pub/FreeBSD/releases/amd64/10.2-RELEASE/kernel.txz
 ```
 
 Extract the mfsBSD itself and change into its directory
 ```
-tar -xvf mfsbsd-2.1.tar.gz
-cd mfsbsd-2.1
+tar -xvf 2.2.tar.gz
+cd mfsbsd-2.2
 ```
+
 ## Step 2 -- Configure network settings
 Update mfsBSD config so that once we reboot into it the network would be correctly configured.
 
@@ -56,16 +57,21 @@ cat /etc/rc.digitalocean.d/droplet.conf >> conf/rc.conf
 cp /etc/resolv.conf conf/resolv.conf
 ```
 
+pkg-static is missing from mfsbsd/tools directory so before we build the image, copy it over from your freebsd system
+```
+cp /usr/local/sbin/pkg-static tools/
+```
+
 ## Step 3 -- build mfsBSD package 
 Now we are ready to build the FreeBSD tar
 ```
 sudo make tar BASE=$HOME
 ```
-After the make is done, you will have ```mfsbsd-10.1-RELEASE-amd64.tar`` in your current directory.
+After the make is done, you will have ```mfsbsd-10.2-RELEASE-amd64.tar`` in your current directory.
 You need to extract it over root.
 
 ```
-sudo tar -C / -xvf mfsbsd-10.1-RELEASE-amd64.tar
+sudo tar -C / -xvf mfsbsd-10.2-RELEASE-amd64.tar
 ```
 ## Step 4 -- Reinstall FreeBSD
 
