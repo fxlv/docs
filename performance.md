@@ -15,6 +15,7 @@ System load:
 * [vtop](https://parall.ax/vtop)
 * [dstat](http://dag.wiee.rs/home-made/dstat/)
 * systat (freebsd)
+* [ss](http://www.cyberciti.biz/files/ss.html) 
 
 
 #Memory
@@ -42,6 +43,30 @@ sar -d
 ```
 sar -n DEV
 ```
+ss utility is a great replacement for netstat, it's faster and supports filtering.
+Make sure `tcp_diag` module is loaded otherwise it falls back to using /proc filesystem which makes it slower.
+Examples.
+get overall stats on network sockets
+
+```
+ss -s
+```
+
+Show all listening sockets
+```
+ss -l
+```
+
+Show  only tcp listening sockets:
+```
+ss -tl
+```
+
+Filter by state
+```
+ss -ta state FIN-WAIT-1
+```
+
 
 #Gathering system information
 `lshw` or `lshw -short` gives a nice overview on the installed hardware
