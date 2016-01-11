@@ -21,7 +21,20 @@ Need to save a log? Add `-o`
 For example, trace the `whoami`command and save a nice log with timestamps.
 
 ```
-trace -tt -o whoami.log whoami
+strace -tt -o whoami.log whoami
+```
+
+You can also filter out by types of syscalls and by specific syscalls.
+
+For example, to only show evertyhing network related, do
+
+```
+strace -p <pid> -e network
+```
+
+Or narrow it down to specific syscalls:
+```
+strace -p <pid> -e connect,socket
 ```
 
 Use [Linux syscall table](https://filippo.io/linux-syscall-table/) to find out what all those syscalls do.
