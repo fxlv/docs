@@ -1,4 +1,4 @@
-Using cut and tr commands
+Using cut command.
 
 Cut is quite cool and is flexible in the way you specify which fields you are interested in.
 Example:
