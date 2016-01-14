@@ -37,6 +37,7 @@ Or narrow it down to specific syscalls:
 strace -p <pid> -e connect,socket
 ```
 
+For every syscall there's a man page. You can do `man 2 <syscall name>` to find what it does.
 Use [Linux syscall table](https://filippo.io/linux-syscall-table/) to find out what all those syscalls do.
 
 
