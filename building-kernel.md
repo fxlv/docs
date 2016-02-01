@@ -9,7 +9,7 @@ curl -O https://kernel.org/pub/linux/kernel/v4.x/linux-4.1.6.tar.xz
 
 Remove any previous configs and then do a:
 
-Simple eay to only compile that stuff you actually need
+Simple easy way to only compile that stuff you actually need (or are using):
 ```
 make localyesconfig
 ```
