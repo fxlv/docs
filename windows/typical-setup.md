@@ -32,6 +32,12 @@ To update all the packages run
 ```
 cup all
 ```
+it will how you what packages need updating and interactively ask before updating any one of them.
+
+If you feel brawe and don't want to make these hard individual decisions, add `-y` like so:
+```
+cup -y all
+```
 
 ### Python
 Pip and easy_install are already installed as part of standard windows python installation.
