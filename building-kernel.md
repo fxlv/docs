@@ -4,7 +4,7 @@ sudo apt-get -y install build-essential bzip2 curl libncurses5-dev bc kernel-pac
 ```
 Download the latest and greatest
 ```
-curl -O https://kernel.org/pub/linux/kernel/v4.x/linux-4.1.6.tar.xz
+curl -O https://cdn.kernel.org/pub/linux/kernel/v4.x/linux-4.3.5.tar.xz
 ```
 
 Remove any previous configs and then do a:
