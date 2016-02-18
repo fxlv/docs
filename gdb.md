@@ -38,3 +38,8 @@ maint print statistics
 maint print sections
 ```
 
+Backtraces can be quite long and it might be a good idea to log the output to a file by doing
+```
+set logging on
+```
+this will then log everything to `gdb.txt`
