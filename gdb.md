@@ -1,6 +1,14 @@
 #GDB basics
+## Running program in debugger 
+You can run a program under debugger or you can dabug a core.
+```
+gdb <program>
+```
+will achieve the former.
+Once in the gdb shell type `run` and the program will get executed.
 
-## Getting the core
+
+## Debugging a core
 First of all you need a core to debug. 
 If your application crashed then perhaps you already have it, if not, you'll have to help it out a bit.
 ### Killing it
