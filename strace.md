@@ -41,7 +41,7 @@ For every syscall there's a man page. You can do `man 2 <syscall name>` to find 
 Use [Linux syscall table](https://filippo.io/linux-syscall-table/) to find out what all those syscalls do.
 
 
-Another useful argument is `-s`to override the default sting size that is shown.
+Another useful argument is `-s`to override the default string size that is shown.
 Strace will only show first 32 bytes by default, sometimes you want to see more
 and that's when `-s`can be useful.
     
