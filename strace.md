@@ -44,4 +44,6 @@ Use [Linux syscall table](https://filippo.io/linux-syscall-table/) to find out w
 Another useful argument is `-s`to override the default string size that is shown.
 Strace will only show first 32 bytes by default, sometimes you want to see more
 and that's when `-s`can be useful.
-    
+
+If you're only after library calls, then you can use `ltrace` for that.
+
