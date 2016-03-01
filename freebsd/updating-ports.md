@@ -38,6 +38,10 @@ portmaster auto
 ```
 Portmaster will figure out what is needed and do it all for you.
 
+### Synth
+Nowadays there's another great tool called [Synth](https://github.com/jrmarino/synth).
+It allows you to build a local repo of binary packages, it build stuff in parallel and has a nice UI.
+Much easier to use than Poudriere.
 
 ### Setting build options recursively
 Many ports allow to set various build options. 
