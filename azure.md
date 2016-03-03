@@ -31,9 +31,20 @@ Once done, you can get all your VMs like so:
 azure vm list
 ```
 
+To delete a VM and remove its storage blob:
+
+```
+azure vm delete -b <vm name>
+```
+
 ## Details
 ```
 To list all available Azure locations:
 ```
 azure vm location list
+```
+
+To list available VM sizes, the only way to do this seems to be:
+```
+azure vm location list --json
 ```
