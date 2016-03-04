@@ -52,3 +52,5 @@ pip install ipython pyreadline wmi
 
 [Pywin32](http://sourceforge.net/projects/pywin32/files/pywin32/Build%20219/pywin32-219.win-amd64-py2.7.exe/download), since you are on windows you might want to install it.
 
+[Microsoft Visual C++ Compiler for Python 2.7](http://aka.ms/vcpython27) is needed to build some modules.
+
