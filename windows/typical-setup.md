@@ -8,6 +8,7 @@ Might not be the best way but it's my way.
 * Install [Rapid Environment Editor](http://www.rapidee.com/en/download)
 * Install [visual studio code editor](https://code.visualstudio.com/updates) + powershell and python extensions
 * Install [msys2](https://msys2.github.io/)
+* Install [SourceTree](https://www.sourcetreeapp.com/download)
 
 ### Chocolatey 
 
