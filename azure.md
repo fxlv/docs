@@ -19,6 +19,17 @@ Import it:
 azure account import Downloads/<your-subscription-name>-credentials.publishsettings
 ```
 
+To show what subscriptions are available to you do a :
+```
+azure account list
+```
+
+To choose which one to use:
+```
+azure account set <subscription name>
+```
+
+
 ## Quickstart
 Now, let's quickly deploy a Debian Wheezy VM `testytestytest1` with default user `testuser` and using your SSH key from `$HOME` in region `North Europe`
 ```
