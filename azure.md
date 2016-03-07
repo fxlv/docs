@@ -49,7 +49,7 @@ azure vm delete -b <vm name>
 ```
 
 ## Details
-```
+
 To list all available Azure locations:
 ```
 azure vm location list
@@ -65,6 +65,7 @@ To use Azure Resource Manager set the mode like so:
 ```
 azure config mode arm
 ```
+
 And then you need to log-in:
 ```
 azure login
