@@ -59,3 +59,13 @@ To list available VM sizes, the only way to do this seems to be:
 ```
 azure vm location list --json
 ```
+
+## ARM
+To use Azure Resource Manager set the mode like so:
+```
+azure config mode arm
+```
+And then you need to log-in:
+```
+azure login
+```
