@@ -51,7 +51,7 @@ pip install ipython pyreadline wmi
 ```
 (you need to have pyreadline installed on windows to take advantage of tab-completion)
 
-[Pywin32](http://sourceforge.net/projects/pywin32/files/pywin32/Build%20219/pywin32-219.win-amd64-py2.7.exe/download), since you are on windows you might want to install it.
+If you're planning on using `wmi`, you'll also need to install [Pywin32](http://sourceforge.net/projects/pywin32/files/pywin32/Build%20219/pywin32-219.win-amd64-py2.7.exe/download)
 
 [Microsoft Visual C++ Compiler for Python 2.7](http://aka.ms/vcpython27) is needed to build some modules.
 
