@@ -27,7 +27,7 @@ Gather info:
 Tune swappiness `/proc/sys/vm/swappiness`
 show swap status
 `swapon -s`
-if OOM killer comes it kills based on OOM score, this can be seen also by top
+if OOM killer comes it kills based on OOM score, this can be seen also by top or by looking at `/proc/<pid>/oom_score`
 
 #Storage
 
