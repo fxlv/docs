@@ -1,11 +1,24 @@
 #GDB basics
 ## Running program in debugger 
-You can run a program under debugger or you can dabug a core.
+You can run a program under debugger or you can debug a core.
 ```
 gdb <program>
 ```
 will achieve the former.
 Once in the gdb shell type `run` and the program will get executed.
+You can set break points at specific lines or functions.
+For example:
+```
+break some_file.c:103
+break some_other_file:10
+break somefunction
+```
+Afterwards run the program by issuing
+```
+run
+```
+and it will be stopped at the first breakpoint.
+
 
 
 ## Debugging a core
@@ -83,6 +96,7 @@ Confirm that all's good by doing
 ```
 show logging
 ```
+
 
 ### Bonus content
 Ther's also a fancy mode that can be invoked by providing `-tui` options like so:
