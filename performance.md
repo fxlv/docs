@@ -16,6 +16,7 @@ System load:
 * [dstat](http://dag.wiee.rs/home-made/dstat/)
 * systat (freebsd)
 * [ss](http://www.cyberciti.biz/files/ss.html) 
+* perf
 
 
 #Memory
