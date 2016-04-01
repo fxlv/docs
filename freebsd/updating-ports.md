@@ -43,6 +43,12 @@ Nowadays there's another great tool called [Synth](https://github.com/jrmarino/s
 It allows you to build a local repo of binary packages, it build stuff in parallel and has a nice UI.
 Much easier to use than Poudriere.
 
+To upgrade all outdated ports on a system, run:
+```
+synth upgrade-system
+```
+
+
 ### Setting build options recursively
 Many ports allow to set various build options. 
 If a port had many dependencies then it can happen so that the build process gets interrupted many times when each of the dependencies present their build options dialog.
