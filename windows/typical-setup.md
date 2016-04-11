@@ -24,8 +24,11 @@ Then use ```choco install``` or ```cinst``` to install packages.
 (in admin shell):
 
 ```
-cinst -y putty.install git.install 7zip.install Far ccleaner sysinternals vlc firefox
-cinst -y python2 pip github windirstat youtube-dl winpcap wireshark gimp win32diskimager nmap
+cinst -y putty.install git.install 7zip.install Far ccleaner sysinternals vlc firefox python2
+```
+Restart the powershell (to update path settings)
+```
+cinst -y  pip github windirstat youtube-dl winpcap wireshark gimp win32diskimager nmap
 cinst -y -pre cmder
 ```
 
