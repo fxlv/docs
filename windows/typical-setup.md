@@ -6,7 +6,7 @@ Might not be the best way but it's my way.
 
 * Install x64 jre
 * Install [Rapid Environment Editor](http://www.rapidee.com/en/download)
-* Install [visual studio code editor](https://code.visualstudio.com/updates) + powershell and python extensions
+* Install [visual studio code editor](https://code.visualstudio.com/updates) + powershell and python extensions (press `F1` while in the editor and search for extensions)
 * Install [msys2](https://msys2.github.io/)
 * Install [SourceTree](https://www.sourcetreeapp.com/download)
 
