@@ -9,6 +9,7 @@ Might not be the best way but it's my way.
 * Install [visual studio code editor](https://code.visualstudio.com/updates) + powershell and python extensions (press `F1` while in the editor and search for extensions)
 * Install [msys2](https://msys2.github.io/)
 * Install [SourceTree](https://www.sourcetreeapp.com/download)
+* Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads) and the extension pack
 
 ### Chocolatey 
 
