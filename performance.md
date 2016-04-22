@@ -6,6 +6,7 @@ System load:
 
 * cat /proc/loadavg
 * vmstat
+* [collectl](http://collectl.sourceforge.net/)
 * mpstat -P ALL
 * [ps](https://github.com/fxlv/docs/blob/master/ps.md)
 * top
@@ -35,6 +36,7 @@ if OOM killer comes it kills based on OOM score, this can be seen also by top or
 Gather info: `/proc/diskstats`
 ```
 iostat
+iotop
 lsof
 fuser
 sar -d
