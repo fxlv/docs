@@ -1,4 +1,5 @@
 ## Quick oneliners
+(note that this is all about GNU ps)
 
 ### Show all processes owned by user `zabbix`
 ```
