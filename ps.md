@@ -16,7 +16,8 @@ zabbix   23966 23960  0 16771   500   0 Sep05 ?        00:00:00   /usr/sbin/zabb
 zabbix   23967 23960  0 16771   788   0 Sep05 ?        00:17:52   /usr/sbin/zabbix_agentd: active checks #1 [idle 1 sec]
 ```
 
-### Show all processes that match the commandline and sum up CPU time (useful when there are short lived forks)
+### Show all processes that match the commandline
+And sum up CPU time (useful when there are short lived forks), `-C` only works if you know exact commandline name.
 ```
 ps -C sshd  -FH S
 ```
