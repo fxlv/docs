@@ -47,3 +47,5 @@ and that's when `-s`can be useful.
 
 If you're only after library calls, then you can use `ltrace` for that.
 
+If you're after same functionality on a a BSD, there's `truss`. On OSX there's `dtruss`.
+
