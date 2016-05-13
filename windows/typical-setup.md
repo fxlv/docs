@@ -11,6 +11,7 @@ Might not be the best way but it's my way.
 * Install [SourceTree](https://www.sourcetreeapp.com/download)
 * Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads) and the extension pack
 * Install [Acrylic_WiFi_Home](https://www.acrylicwifi.com/en/wlan-software/wlan-scanner-acrylic-wifi-free/)
+* Install [Process Hacker](http://processhacker.sourceforge.net/downloads.php)
 
 ### Chocolatey 
 
