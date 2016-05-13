@@ -10,6 +10,7 @@ Might not be the best way but it's my way.
 * Install [msys2](https://msys2.github.io/)
 * Install [SourceTree](https://www.sourcetreeapp.com/download)
 * Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads) and the extension pack
+* Install [Acrylic_WiFi_Home](https://www.acrylicwifi.com/en/wlan-software/wlan-scanner-acrylic-wifi-free/)
 
 ### Chocolatey 
 
