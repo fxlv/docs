@@ -6,6 +6,8 @@ gdb <program>
 ```
 will achieve the former.
 Once in the gdb shell type `run` and the program will get executed.
+
+### Break points
 You can set break points at specific lines or functions.
 For example:
 ```
@@ -18,6 +20,13 @@ Afterwards run the program by issuing
 run
 ```
 and it will be stopped at the first breakpoint.
+
+### Specifying arguments.
+In case you want to pass some arguments, use `--args` option like so:
+
+```
+gdb --args ./program arg1 arg2 argN
+```
 
 
 
