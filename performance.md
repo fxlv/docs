@@ -43,6 +43,17 @@ sar -d
 ```
 
 #Network
+
+All of these can be installed from a Debian package
+* ifstat
+* iptraf
+* iftop
+* vnstat
+* bwm-ng
+* speedometer
+
+# The universal tool - SAR
+
 ```
 sar -n DEV
 ```
