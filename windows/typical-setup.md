@@ -6,10 +6,8 @@ Might not be the best way but it's my way.
 
 * Install x64 jre
 * Install [Rapid Environment Editor](http://www.rapidee.com/en/download)
-* Install [visual studio code editor](https://code.visualstudio.com/updates) + powershell and python extensions (press `F1` while in the editor and search for extensions)
 * Install [msys2](https://msys2.github.io/)
 * Install [SourceTree](https://www.sourcetreeapp.com/download)
-* Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads) and the extension pack
 * Install [Acrylic_WiFi_Home](https://www.acrylicwifi.com/en/wlan-software/wlan-scanner-acrylic-wifi-free/)
 * Install [Process Hacker](http://processhacker.sourceforge.net/downloads.php)
 
@@ -27,7 +25,7 @@ Then use ```choco install``` or ```cinst``` to install packages.
 (in admin shell):
 
 ```
-cinst -y putty.install git.install 7zip.install Far ccleaner sysinternals crystaldiskinfo vlc firefox python2 virtualbox VirtualBox.ExtensionPack
+cinst -y putty.install git.install 7zip.install Far ccleaner sysinternals crystaldiskinfo vlc firefox python2 virtualbox VirtualBox.ExtensionPack visualstudiocode
 ```
 Restart the powershell (to update path settings)
 ```
@@ -46,6 +44,8 @@ If you feel brawe and don't want to make these hard individual decisions, add `-
 ```
 cup -y all
 ```
+### Visual studio code
+* Install Visual studio code powershell and python extensions (press `F1` while in the editor and search for extensions)
 
 ### Python
 Pip and easy_install are already installed as part of standard windows python installation.
