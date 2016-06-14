@@ -32,6 +32,22 @@ root     19583  2946  0 20464  3972   0 20:06 ?        Ss     0:00   sshd: fx [p
 fx       19588 19583  0 20464  1700   0 20:06 ?        S      0:00     sshd: fx@pts/1
 ```
 
+### show process tree
+```
+ps axjf
+```
+Example output
+```
+...
+    1  2150  2150  2150 ?           -1 Ss     106  60:38 /usr/sbin/nrpe -c /etc/nagios/nrpe.cfg -d
+    1  2332  2332  2332 ?           -1 Ss       0   3:38 /usr/lib/postfix/master
+ 2332  2338  2332  2332 ?           -1 S      105   0:45  \_ qmgr -l -t fifo -u
+ 2332  9092  2332  2332 ?           -1 S      105   0:00  \_ pickup -l -t fifo -u -c
+    1  2398  2397  2397 ?           -1 SL       0 139:26 /usr/sbin/samhain
+ 2398 15782  2397  2397 ?           -1 S        0   0:04  \_ /usr/sbin/samhain
+ ...
+```
+
 ## simple sorting
 ### find the top memory user
 ```
