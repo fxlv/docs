@@ -45,7 +45,15 @@ If you feel brawe and don't want to make these hard individual decisions, add `-
 cup -y all
 ```
 ### Visual studio code
-* Install Visual studio code powershell and python extensions (press `F1` while in the editor and search for extensions)
+Visual studio code has some [cool and useful extensions](https://marketplace.visualstudio.com/vscode)
+Type Ctrl+P to open "Quick Open" and then run following commands:
+
+```
+ext install python
+ext install vscode-instant-markdown
+ext install Spell
+ext install PowerShell
+```
 
 ### Python
 Pip and easy_install are already installed as part of standard windows python installation.
