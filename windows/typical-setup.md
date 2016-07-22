@@ -25,7 +25,7 @@ Then use ```choco install``` or ```cinst``` to install packages.
 (in admin shell):
 
 ```
-cinst -y putty.install git.install 7zip.install Far ccleaner sysinternals crystaldiskinfo vlc firefox python2 spotify visualstudiocode
+cinst -y putty.install git.install 7zip.install Far ccleaner sysinternals crystaldiskinfo vlc firefox python2 spotify visualstudiocode terraform
 ```
 Restart the powershell (to update path settings)
 ```
