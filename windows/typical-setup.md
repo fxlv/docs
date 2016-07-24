@@ -61,7 +61,7 @@ Pip and easy_install are already installed as part of standard windows python in
 (in admin shell):
 ```
 pip install --upgrade pip
-pip install ipython bipython pyreadline wmi 
+pip install ipython bpython pyreadline wmi 
 ```
 (you need to have pyreadline installed on windows to take advantage of tab-completion)
 
