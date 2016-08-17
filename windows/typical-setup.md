@@ -29,7 +29,7 @@ cinst -y putty.install git.install 7zip.install Far ccleaner sysinternals crysta
 ```
 Restart the powershell (to update path settings)
 ```
-cinst -y  pip github windirstat youtube-dl winpcap wireshark gimp win32diskimager nmap nodejs npm
+cinst -y  pip github windirstat youtube-dl winpcap wireshark gimp win32diskimager nmap nodejs npm consolez
 cinst -y -pre cmder
 ```
 
