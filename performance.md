@@ -1,24 +1,29 @@
-#Cpu
-
-Gather info: cat /proc/cpuinfo
-
-System load:
+# General observability tools
 
 * cat /proc/loadavg
 * vmstat
+*  top
+* htop
 * [collectl](http://collectl.sourceforge.net/)
 * mpstat -P ALL
 * [ps](https://github.com/fxlv/docs/blob/master/ps.md)
-* top
-* htop
 * [glances](https://github.com/nicolargo/glances)
 * pidstat
 * [vtop](https://parall.ax/vtop)
 * [dstat](http://dag.wiee.rs/home-made/dstat/)
 * systat (freebsd)
 * [ss](http://www.cyberciti.biz/files/ss.html) 
-* perf
 
+# Tracing & profiling
+* strace & truss & dtruss
+* dtrace
+* stap
+* perf
+* ltrace
+
+#Cpu
+
+Gather info: cat /proc/cpuinfo
 
 #Memory
 
