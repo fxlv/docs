@@ -5,14 +5,12 @@
 *  top
 * htop
 * [collectl](http://collectl.sourceforge.net/)
-* mpstat -P ALL
 * [ps](https://github.com/fxlv/docs/blob/master/ps.md)
 * [glances](https://github.com/nicolargo/glances)
 * pidstat
 * [vtop](https://parall.ax/vtop)
 * [dstat](http://dag.wiee.rs/home-made/dstat/)
 * systat (freebsd)
-* [ss](http://www.cyberciti.biz/files/ss.html) 
 
 # Tracing & profiling
 * strace & truss & dtruss
@@ -22,8 +20,8 @@
 * ltrace
 
 #Cpu
-
-Gather info: cat /proc/cpuinfo
+* `cat /proc/cpuinfo`
+* mpstat
 
 #Memory
 
@@ -50,6 +48,7 @@ sar -d
 #Network
 
 All of these can be installed from a Debian package
+* [ss](http://www.cyberciti.biz/files/ss.html) 
 * ifstat
 * iptraf
 * iftop
