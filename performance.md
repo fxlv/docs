@@ -13,7 +13,7 @@
 * strace & truss & dtruss
 * dtrace
 * stap
-* perf
+* [perf](https://perf.wiki.kernel.org/index.php/Tutorial) 
 * ltrace
 
 #Cpu
