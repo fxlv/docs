@@ -6,7 +6,6 @@
 * [collectl](http://collectl.sourceforge.net/)
 * [ps](https://github.com/fxlv/docs/blob/master/ps.md)
 * [glances](https://github.com/nicolargo/glances)
-* pidstat
 * [vtop](https://parall.ax/vtop)
 * systat (freebsd)
 
@@ -20,6 +19,8 @@
 #Cpu
 * `cat /proc/cpuinfo`
 * mpstat
+* pidstat
+* time (the binary is better than the shell built in)
 
 #Memory
 
