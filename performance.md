@@ -1,15 +1,13 @@
 # General observability tools
 
 * cat /proc/loadavg
-* vmstat
-*  top
-* htop
+* vmstat, [dstat](http://dag.wiee.rs/home-made/dstat/)
+* top, htop, atop
 * [collectl](http://collectl.sourceforge.net/)
 * [ps](https://github.com/fxlv/docs/blob/master/ps.md)
 * [glances](https://github.com/nicolargo/glances)
 * pidstat
 * [vtop](https://parall.ax/vtop)
-* [dstat](http://dag.wiee.rs/home-made/dstat/)
 * systat (freebsd)
 
 # Tracing & profiling
