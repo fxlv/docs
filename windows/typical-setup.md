@@ -56,6 +56,8 @@ ext install PowerShell
 ext install output-colorizer
 ext install azurerm-vscode-tools
 ext install ansible
+ext install Theme-1337
+ext install cpptools
 ```
 Enable [auto save](https://code.visualstudio.com/docs/editor/codebasics#_save-auto-save)
 
