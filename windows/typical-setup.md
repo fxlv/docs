@@ -54,6 +54,7 @@ ext install vscode-instant-markdown
 ext install Spell
 ext install PowerShell
 ```
+Enable [auto save](https://code.visualstudio.com/docs/editor/codebasics#_save-auto-save)
 
 ### Python
 Pip and easy_install are already installed as part of standard windows python installation.
