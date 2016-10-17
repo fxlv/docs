@@ -53,6 +53,9 @@ ext install python
 ext install vscode-instant-markdown
 ext install Spell
 ext install PowerShell
+ext install output-colorizer
+ext install azurerm-vscode-tools
+ext install ansible
 ```
 Enable [auto save](https://code.visualstudio.com/docs/editor/codebasics#_save-auto-save)
 
