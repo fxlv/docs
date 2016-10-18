@@ -59,7 +59,16 @@ ext install ansible
 ext install Theme-1337
 ext install cpptools
 ```
-Enable [auto save](https://code.visualstudio.com/docs/editor/codebasics#_save-auto-save)
+Enable [auto save](https://code.visualstudio.com/docs/editor/codebasics#_save-auto-save) and linting for Python.
+By putting this into your `User Settings`.
+```
+{
+        "files.autoSave": "onFocusChange",
+        "python.linting.pylintEnabled": true,
+        "python.linting.flake8Enabled": true,
+        "python.linting.pydocstyleEnabled": true
+}
+```
 
 ### Python
 Pip and easy_install are already installed as part of standard windows python installation.
