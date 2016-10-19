@@ -50,7 +50,6 @@ Type Ctrl+P to open "Quick Open" and then run following commands:
 
 ```
 ext install python
-ext install vscode-instant-markdown
 ext install Spell
 ext install PowerShell
 ext install output-colorizer
@@ -58,6 +57,10 @@ ext install azurerm-vscode-tools
 ext install ansible
 ext install Theme-1337
 ext install cpptools
+ext install vscode-instant-markdown
+ext install markdownlint
+ext install markdown-toc
+ext install markdown-shortcuts
 ```
 Enable [auto save](https://code.visualstudio.com/docs/editor/codebasics#_save-auto-save) and linting for Python.
 By putting this into your `User Settings`.
