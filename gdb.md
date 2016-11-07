@@ -71,6 +71,12 @@ IF the program has threads use `thread apply all bt`
 ### Getting a bit more advanced 
 If it was a crash (for example sgmentation fault) frame 0 will be the one that helps you understand what happened.
 
+If you have multiple threds, you can get overview about them by doing
+
+```
+info threads
+```
+
 if you have found a thread that looks interesting, select it and see what happened:
 
 ```
