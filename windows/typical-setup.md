@@ -7,7 +7,6 @@ Might not be the best way but it's my way.
 * Install x64 jre
 * Install [Rapid Environment Editor](http://www.rapidee.com/en/download)
 * Install [msys2](https://msys2.github.io/)
-* Install [SourceTree](https://www.sourcetreeapp.com/download)
 * Install [Acrylic_WiFi_Home](https://www.acrylicwifi.com/en/wlan-software/wlan-scanner-acrylic-wifi-free/)
 * Install [Process Hacker](http://processhacker.sourceforge.net/downloads.php)
 
@@ -24,12 +23,28 @@ Install [chocolatey](https://chocolatey.org/) and use it to install everything e
 Then use ```choco install``` or ```cinst``` to install packages.
 (in admin shell):
 
+Basics:
 ```
-cinst -y putty.install git.install 7zip.install Far ccleaner sysinternals crystaldiskinfo vlc firefox python2 spotify visualstudiocode terraform
+cinst -y putty.install git.install 7zip.install Far consolez firefox python2 visualstudiocode
+```
+
+Media:
+```
+cinst -y spotify vlc
+```
+
+System utilities:
+```
+cinst -y ccleaner sysinternals crystaldiskinfo win32diskimager windirstat
+```
+
+Tools:
+```
+cinst -y curl winpcap wireshark nmap terraform keepass.install sourcetree fiddler4
 ```
 Restart the powershell (to update path settings)
 ```
-cinst -y  pip github windirstat youtube-dl winpcap wireshark gimp win32diskimager nmap nodejs npm consolez
+cinst -y  pip github youtube-dl gimp nodejs npm 
 cinst -y -pre cmder
 ```
 
