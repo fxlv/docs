@@ -25,7 +25,7 @@ Then use ```choco install``` or ```cinst``` to install packages.
 
 Basics:
 ```
-cinst -y putty.install git.install 7zip.install Far consolez firefox python2 visualstudiocode
+cinst -y conemu putty.install git.install 7zip.install Far firefox python2 visualstudiocode
 ```
 
 Media:
