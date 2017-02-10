@@ -90,6 +90,7 @@ By putting this into your `User Settings`.
 
 ### Python
 Pip and easy_install are already installed as part of standard windows python installation.
+Some modules need building and for that you'll need Visual C++ installed, get it at http://aka.ms/vcpython27
 
 (in admin shell):
 ```
