@@ -92,10 +92,9 @@ By putting this into your `User Settings`.
 Pip and easy_install are already installed as part of standard windows python installation.
 Some modules need building and for that you'll need Visual C++ installed, get it at http://aka.ms/vcpython27
 
-(in admin shell):
 ```
 pip install --upgrade pip
-pip install ipython bpython pyreadline wmi 
+pip install ipython bpython pyreadline wmi subliminal
 ```
 (you need to have pyreadline installed on windows to take advantage of tab-completion)
 
