@@ -90,7 +90,7 @@ By putting this into your `User Settings`.
 
 ### Python
 Pip and easy_install are already installed as part of standard windows python installation.
-Some modules need building and for that you'll need Visual C++ installed, get it at http://aka.ms/vcpython27
+Some modules need building and for that you'll need [Visual C++ compiler for Python](http://aka.ms/vcpython27) installed.
 
 ```
 pip install --upgrade pip
@@ -100,5 +100,4 @@ pip install ipython bpython pyreadline wmi subliminal
 
 If you're planning on using `wmi`, you'll also need to install [Pywin32](http://sourceforge.net/projects/pywin32/files/pywin32/Build%20219/pywin32-219.win-amd64-py2.7.exe/download)
 
-[Microsoft Visual C++ Compiler for Python 2.7](http://aka.ms/vcpython27) is needed to build some modules.
 
