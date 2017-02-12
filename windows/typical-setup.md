@@ -4,11 +4,14 @@ Might not be the best way but it's my way.
 ## Software
 ### Manual install
 
-* Install x64 jre
-* Install [Rapid Environment Editor](http://www.rapidee.com/en/download)
-* Install [msys2](https://msys2.github.io/)
-* Install [Acrylic_WiFi_Home](https://www.acrylicwifi.com/en/wlan-software/wlan-scanner-acrylic-wifi-free/)
-* Install [Process Hacker](http://processhacker.sourceforge.net/downloads.php)
+Install:
+* x64 jre
+* [Rapid Environment Editor](http://www.rapidee.com/en/download)
+* [msys2](https://msys2.github.io/)
+* [Acrylic_WiFi_Home](https://www.acrylicwifi.com/en/wlan-software/wlan-scanner-acrylic-wifi-free/)
+* [Process Hacker](http://processhacker.sourceforge.net/downloads.php)
+* [XMind](http://www.xmind.net/download/win/)
+* [MobaXterm](http://mobaxterm.mobatek.net/download-home-edition.html)
 
 ### Chocolatey 
 
