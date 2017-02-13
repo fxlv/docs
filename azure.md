@@ -1,3 +1,16 @@
+# There's a new version of Azure tools!
+Indeed [there is a new version of Azure tools](https://docs.microsoft.com/en-us/cli/azure/install-az-cli2)
+ written in Python (vs the current node.js).
+ 
+ Installation is as easy as
+ ```
+  pip install azure-cli
+ ```
+ they will pull quite a bit of dependencies though, so you might want to consider using virtualenv.
+ 
+ Check out the [reference](https://docs.microsoft.com/en-us/cli/azure/).
+
+
 # Using Azure cross platform tools
 
 Besides the powershell commandlets there are also the [Azure xplat](https://github.com/Azure/azure-xplat-cli) tools that can be used to control your Azure stuff.
