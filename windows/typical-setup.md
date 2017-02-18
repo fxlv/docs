@@ -12,7 +12,8 @@ Install:
 * [Process Hacker](http://processhacker.sourceforge.net/downloads.php)
 * [XMind](http://www.xmind.net/download/win/)
 * [MobaXterm](http://mobaxterm.mobatek.net/download-home-edition.html)
-* [Onetastic](https://getonetastic.com/) plugin for OneNote
+* [Onetastic](https://getonetastic.com/) plugin for OneNote. 
+* [No spell check macro for Onetastic](https://getonetastic.com/macroland&id=1DF08B3C629840759A86237CC090F8A9)
 
 ### Chocolatey 
 
