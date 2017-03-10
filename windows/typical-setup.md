@@ -99,7 +99,7 @@ Some modules need building and for that you'll need [Visual C++ compiler for Pyt
 
 ```
 pip install --upgrade pip
-pip install ipython bpython pyreadline wmi subliminal
+pip install ipython bpython pyreadline wmi subliminal prospector
 ```
 To check on outdated pip packages:
 ```
