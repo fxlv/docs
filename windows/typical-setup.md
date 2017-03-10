@@ -101,6 +101,10 @@ Some modules need building and for that you'll need [Visual C++ compiler for Pyt
 pip install --upgrade pip
 pip install ipython bpython pyreadline wmi subliminal
 ```
+To check on outdated pip packages:
+```
+pip list --outdated
+```
 (you need to have pyreadline installed on windows to take advantage of tab-completion)
 
 If you're planning on using `wmi`, you'll also need to install [Pywin32](http://sourceforge.net/projects/pywin32/files/pywin32/Build%20219/pywin32-219.win-amd64-py2.7.exe/download)
