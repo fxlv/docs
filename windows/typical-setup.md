@@ -71,6 +71,7 @@ Type Ctrl+P to open "Quick Open" and then run following commands:
 ```
 ext install python
 ext install Spell
+ext install code-spell-checker
 ext install PowerShell
 ext install output-colorizer
 ext install azurerm-vscode-tools
