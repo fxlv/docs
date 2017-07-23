@@ -35,6 +35,7 @@ cinst -y conemu putty.install git.install 7zip.install Far firefox python2 visua
 
 Media:
 ```
+
 cinst -y spotify vlc
 ```
 
@@ -71,6 +72,7 @@ Type Ctrl+P to open "Quick Open" and then run following commands:
 ```
 ext install python
 ext install Spell
+ext install alefragnani.bookmarks
 ext install code-spell-checker
 ext install PowerShell
 ext install output-colorizer
