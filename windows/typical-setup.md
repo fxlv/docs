@@ -30,7 +30,7 @@ Then use ```choco install``` or ```cinst``` to install packages.
 
 Basics:
 ```
-cinst -y conemu putty.install git.install 7zip.install Far firefox python2 visualstudiocode
+cinst -y conemu putty.install git.install 7zip.install Far firefox python2 visualstudiocode hxd
 ```
 
 Media:
@@ -84,6 +84,7 @@ ext install vscode-instant-markdown
 ext install markdownlint
 ext install markdown-toc
 ext install markdown-shortcuts
+ext install vscode-hexdump
 ```
 Enable [auto save](https://code.visualstudio.com/docs/editor/codebasics#_save-auto-save) and linting for Python.
 By putting this into your `User Settings`.
