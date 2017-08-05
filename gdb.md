@@ -1,4 +1,4 @@
-#GDB basics
+# GDB basics
 ## Running program in debugger 
 You can run a program under debugger or you can debug a core.
 ```
