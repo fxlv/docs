@@ -21,6 +21,12 @@ run
 ```
 and it will be stopped at the first breakpoint.
 
+If you want to debug the program one machine instruction at a time, use "step into"
+
+```
+si
+```
+
 ### Specifying arguments.
 In case you want to pass some arguments, use `--args` option like so:
 
@@ -118,3 +124,5 @@ Ther's also a fancy mode that can be invoked by providing `-tui` options like so
 ```
 gdb -tui ./someprogram core
 ```
+
+Even fancier still, theres a fantastic dashboard for GDB - https://github.com/cyrus-and/gdb-dashboard
