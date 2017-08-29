@@ -73,6 +73,44 @@ First useful thing is backtrace, so once you are in the GDB shell, run `bt`.
 For more details use `bt full`
 
 IF the program has threads use `thread apply all bt`
+### Understanding the environment
+
+If you've set a breakpoint or are just stepping through, it can be useful to see the source code around the point.
+This is done with the `list` command or just `l`
+
+To see what variables have been set in the programm being debugged you can do
+
+```
+info locals
+```
+
+Now, one more useful tip is pretty printing.
+Suppose you have some data structure that you want to print:
+```
+(gdb) print metrics
+$3 = {{name = 0x400ae9 "num_open_files", value = 320}, {name = 0x400af8 "num_free_file_handles", value = 0}, {name = 0x400b0e "num_max_open_files", value = 0}}
+(gdb)
+```
+Now this is fine, and this is a simple struct, but what if it was larger, it sure would be nice to print it out in a more human friendly way.
+This is where pretty printing comes in.
+
+Enable pretty printing and run the print command again:
+```
+(gdb) set print pretty
+(gdb) print metrics
+$4 = {{
+    name = 0x400ae9 "num_open_files",
+    value = 320
+  }, {
+    name = 0x400af8 "num_free_file_handles",
+    value = 0
+  }, {
+    name = 0x400b0e "num_max_open_files",
+    value = 0
+  }}
+```
+Much nicer.
+
 
 ### Getting a bit more advanced 
 If it was a crash (for example sgmentation fault) frame 0 will be the one that helps you understand what happened.
