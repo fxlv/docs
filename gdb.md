@@ -75,6 +75,8 @@ For more details use `bt full`
 IF the program has threads use `thread apply all bt`
 ### Understanding the environment
 
+#### Local variables
+
 If you've set a breakpoint or are just stepping through, it can be useful to see the source code around the point.
 This is done with the `list` command or just `l`
 
@@ -84,6 +86,7 @@ To see what variables have been set in the programm being debugged you can do
 info locals
 ```
 
+#### Pretty printing
 Now, one more useful tip is pretty printing.
 Suppose you have some data structure that you want to print:
 ```
@@ -157,10 +160,20 @@ show logging
 ```
 
 
-### Bonus content
-Ther's also a fancy mode that can be invoked by providing `-tui` options like so:
+### GDB frontends
+
+There are several interesting frontends to consider.
+
+First is the built in text UI mode or TUI. You can use it by specifying `-tui` option to gdb like so:
 ```
 gdb -tui ./someprogram core
 ```
+or during runtime, press `C - x C - a`
 
-Even fancier still, theres a fantastic dashboard for GDB - https://github.com/cyrus-and/gdb-dashboard
+Next one I highly enjoy using by default is the [GDB dashboard](https://github.com/cyrus-and/gdb-dashboard). You add it to your `.gdbinit` and it makes your GDB very hipster-like by default.
+
+Then if this is not enough, there are 2 more cool frontends I've tried.
+
+First one is a very fancy [browser-based frontend for GDB](https://github.com/cs01/gdbgui). Very easy to get running and sort of *just works*.
+
+Lastly, if you feel like running a GUI app, there's [KDBG](http://www.kdbg.org/). Works well, but means you have to have X server running.
