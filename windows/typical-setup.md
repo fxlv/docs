@@ -42,7 +42,7 @@ cinst -y spotify vlc
 
 System utilities:
 ```
-cinst -y ccleaner sysinternals crystaldiskinfo win32diskimager windirstat
+cinst -y ccleaner sysinternals crystaldiskinfo win32diskimager windirstat lockhunter
 ```
 
 Tools:
