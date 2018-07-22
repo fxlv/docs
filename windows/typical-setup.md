@@ -86,6 +86,9 @@ ext install markdownlint
 ext install markdown-toc
 ext install markdown-shortcuts
 ext install vscode-hexdump
+ext install ms-vscode.csharp
+ext install leopotam.csharpfixformat
+ext install lucasazzola.vscode-csproj
 ```
 Enable [auto save](https://code.visualstudio.com/docs/editor/codebasics#_save-auto-save) and linting for Python.
 By putting this into your `User Settings`.
