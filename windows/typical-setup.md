@@ -47,8 +47,14 @@ cinst -y ccleaner sysinternals crystaldiskinfo win32diskimager windirstat lockhu
 
 Tools:
 ```
-cinst -y curl winpcap wireshark nmap terraform keepass.install sourcetree fiddler4 postman
+cinst -y curl winpcap wireshark nmap terraform keepass.install sourcetree 
 ```
+
+Developing:
+```
+cinst -y scriptcs fiddler4 postman
+```
+
 Restart the powershell (to update path settings)
 ```
 cinst -y  pip github youtube-dl gimp nodejs npm 
