@@ -22,6 +22,7 @@ Open Powershell Admin console:
 
 ```
 Set-ExecutionPolicy Unrestricted
+iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 ```
 
 Install [chocolatey](https://chocolatey.org/) and use it to install everything else.
@@ -53,6 +54,11 @@ cinst -y curl winpcap wireshark nmap terraform keepass.install sourcetree
 Developing:
 ```
 cinst -y scriptcs fiddler4 postman
+```
+
+Gaming:
+```
+cinst -y steam
 ```
 
 Restart the powershell (to update path settings)
