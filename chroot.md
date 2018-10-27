@@ -35,3 +35,12 @@ And work around bug [#685034](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=
 ```
 cp  /bin/true /usr/bin/ischroot
 ```
+
+And make sure daemons won't get started by dpkg
+```
+cat > ./usr/sbin/policy-rc.d <<EOF
+#!/bin/sh
+exit 101
+EOF
+chmod a+x ./usr/sbin/policy-rc.d
+```
