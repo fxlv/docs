@@ -13,7 +13,7 @@ echo "sysfs $CHROOT/sys sysfs defaults 0 0" >> /etc/fstab
 
 mount proc $CHROOT/proc -t proc
 mount sysfs $CHROOT/sys -t sysfs
-mount --bind /dev/pts ${CHROOT}/dev/pts
+mount -o bind /dev ${CHROOT}/dev
 
 cp /etc/hosts $CHROOT/etc/hosts
 cp /proc/mounts $CHROOT/etc/mtab
