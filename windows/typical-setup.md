@@ -109,6 +109,7 @@ By putting this into your `User Settings`.
         "files.autoSave": "onFocusChange",
         "python.linting.pylintEnabled": true,
         "python.linting.flake8Enabled": true,
+        "python.linting.prospectorEnabled": true
         "python.linting.pydocstyleEnabled": true
 }
 ```
