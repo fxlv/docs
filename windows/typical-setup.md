@@ -32,7 +32,7 @@ Then use ```choco install``` or ```cinst``` to install packages.
 
 Basics:
 ```
-cinst -y conemu putty.install git.install 7zip.install Far rufus firefox python2 visualstudiocode hxd bind-toolsonly
+cinst -y conemu putty.install git.install 7zip.install Far rufus firefox python3 visualstudiocode hxd bind-toolsonly
 ```
 
 Media:
